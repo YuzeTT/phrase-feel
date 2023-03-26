@@ -1,4 +1,6 @@
 <script setup lang="ts" generic="T extends any, O extends any">
+import ContentsList from '~/components/ContentsList.vue'
+
 defineOptions({
   name: 'IndexPage',
 })
@@ -14,14 +16,14 @@ const go = () => {
 
 <template>
   <div>
-    <div i-ri-ancient-pavilion-fill text-4xl inline-block bg-indigo-500 />
-    <p>句情</p>
-    <p>
-      <em text-sm op75>在剧情中爽背古文</em>
-    </p>
-
-    <div py-4 />
-
+    <div text-center mt-5>
+      <div i-ri-ancient-pavilion-fill text-4xl inline-block bg-indigo-500 />
+      <p>句情</p>
+      <p>
+        <em text-sm op75>在剧情中爽背古文</em>
+      </p>
+    </div>
+    <div py-3 />
     <TheInput
       v-model="name"
       placeholder="我相信你不会用搜索框"
@@ -33,8 +35,10 @@ const go = () => {
         搜索
       </button>
     </TheInput>
+    <div py-1 />
+    <ContentsList />
 
-    <div>
+    <!-- <div>
       <button
         class="m-3 text-sm btn"
         :disabled="!name"
@@ -42,6 +46,6 @@ const go = () => {
       >
         Go
       </button>
-    </div>
+    </div> -->
   </div>
 </template>

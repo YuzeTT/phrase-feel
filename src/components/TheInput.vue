@@ -5,7 +5,7 @@ const { modelValue } = defineModel<{
 </script>
 
 <template>
-  <div border="~ rounded gray-200 dark:gray-700" p-1 flex gap-2>
+  <div border="~ rounded-lg gray-200 dark:gray-700" p-1 flex gap-2>
     <input
       id="input"
       v-model="modelValue"

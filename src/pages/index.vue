@@ -35,7 +35,19 @@ const go = () => {
         搜索
       </button>
     </TheInput>
-    <div py-1 />
+    <div h-1px w-10 border="b base" my-4 mx-auto />
+    <div my-2 />
+    <p text-center op50 my-2>
+      准备好了？
+    </p>
+    <div>
+      <button btn-light w-full>
+        继续上次 【小石潭记】
+      </button>
+      <p text-center op50 my-2>
+        或 开始新的内容
+      </p>
+    </div>
     <ContentsList />
 
     <!-- <div>

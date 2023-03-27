@@ -1,19 +1,15 @@
 <script setup lang="ts">
-import { content } from '~/logic/utils'
-
-const sumNumber = (text: string[]) => {
-  return text.map((t: string) => {
-    return t.length
-  }).reduce((accumulator, currentValue) => {
-    return accumulator + currentValue
-  })
+import type { Content } from '~/logic/types'
+import { content, sumNumber } from '~/logic/utils'
+const play = (item: Content) => {
+  localStorage.setItem('content', JSON.stringify(item))
 }
 </script>
 
 <template>
   <div space-y-2>
     <!-- {{ modules }} -->
-    <div v-for="(item, key) in content" :key="key" bg-coolGray-100 p-3 rounded-lg dark="bg-zinc-800" relative>
+    <div v-for="(item, key) in content" :key="key" bg-coolGray-100 p-3 rounded-lg dark="bg-zinc-800" relative @click="play(item)">
       <h2 font-serif text-2xl font-black>
         {{ item.name }}
       </h2>

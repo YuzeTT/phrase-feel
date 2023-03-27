@@ -1,16 +1,7 @@
 <script setup lang="ts">
-import type { Content } from '~/logic/types'
-import { sumNumber } from '~/logic/utils'
+import { sumNumber, theContentDefault } from '~/logic/utils'
 
-const theDefault: Content = {
-  name: '',
-  author: '',
-  uploader: '',
-  warning_text: '',
-  content: [],
-  story: [],
-}
-const content = useStorage('content', theDefault, localStorage)
+const content = useStorage('content', theContentDefault, localStorage)
 </script>
 
 <template>

@@ -1,5 +1,6 @@
 <script setup lang="ts" generic="T extends any, O extends any">
 import ContentsList from '~/components/ContentsList.vue'
+import { theContentDefault } from '~/logic/utils'
 
 defineOptions({
   name: 'IndexPage',
@@ -8,6 +9,8 @@ defineOptions({
 const name = $ref('')
 
 const router = useRouter()
+
+const content = useStorage('content', theContentDefault, localStorage)
 const go = () => {
   if (name)
     router.push(`/hi/${encodeURIComponent(name)}`)
@@ -40,9 +43,9 @@ const go = () => {
     <p text-center op50 my-2>
       准备好了？
     </p>
-    <div>
-      <button btn-light w-full>
-        继续上次 【小石潭记】
+    <div v-if="content.name !== ''">
+      <button btn-light w-full @click="$router.push('/play')">
+        继续上次 【{{ content.name }}】
       </button>
       <p text-center op50 my-2>
         或 开始新的内容

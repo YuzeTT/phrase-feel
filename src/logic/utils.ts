@@ -9,3 +9,12 @@ export const sumNumber = (text: string[]) => {
     return accumulator + currentValue
   })
 }
+
+export const theContentDefault: Content = {
+  name: '',
+  author: '',
+  uploader: '',
+  warning_text: '',
+  content: [],
+  story: [],
+}

@@ -1,15 +1,19 @@
 <script setup lang="ts">
 import type { Content } from '~/logic/types'
 import { content, sumNumber } from '~/logic/utils'
+
+const router = useRouter()
+
 const play = (item: Content) => {
   localStorage.setItem('content', JSON.stringify(item))
+  router.push('/play')
 }
 </script>
 
 <template>
   <div space-y-2>
     <!-- {{ modules }} -->
-    <div v-for="(item, key) in content" :key="key" bg-coolGray-100 p-3 rounded-lg dark="bg-zinc-800" relative @click="play(item)">
+    <div v-for="(item, key) in content" :key="key" bg-coolGray-100 p-3 rounded-lg dark="bg-zinc-800" relative cursor-pointer @click="play(item)">
       <h2 font-serif text-2xl font-black>
         {{ item.name }}
       </h2>

@@ -16,5 +16,6 @@ export const theContentDefault: Content = {
   uploader: '',
   warning_text: '',
   content: [],
+  startID: 0,
   story: [],
 }

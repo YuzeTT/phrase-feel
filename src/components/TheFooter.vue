@@ -2,7 +2,7 @@
   <div text-center>
     <div h-1px w-10 border="b base" my-4 mx-auto />
 
-    <nav inline-flex gap-3 mt-2>
+    <nav inline-flex gap-3 mt-2 text-sm>
       <p>
         <span op50>© 2023 </span>
         <a
